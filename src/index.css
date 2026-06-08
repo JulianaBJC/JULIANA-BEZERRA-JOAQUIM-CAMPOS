@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette matching a warm, high-end healing executive vibe */
+  --color-gold-50: #fbf8f3;
+  --color-gold-100: #f5eedf;
+  --color-gold-200: #eadbbf;
+  --color-gold-300: #dac397;
+  --color-gold-400: #c5a880;
+  --color-gold-500: #b49162;
+  --color-gold-600: #9e794f;
+  --color-gold-700: #83603e;
+  --color-gold-800: #6b4d34;
+  --color-gold-900: #553d2b;
+
+  --color-slate-950: #0d121c;
+}
+
+/* Custom scrollbar and smooth behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f5f7f9; /* Sophisticated light pearl slate background */
+  color: #1e293b; /* Deep slate readability font color */
+  overflow-x: hidden;
+}
+
+/* Elegant white glass panel and card background classes for light theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.glow-gold {
+  box-shadow: 0 10px 40px rgba(180, 145, 98, 0.1);
+}
+
+.glow-card:hover {
+  border-color: rgba(180, 145, 98, 0.3);
+  box-shadow: 0 15px 40px rgba(180, 145, 98, 0.12);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom utilities for beautiful lines */
+.accent-line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(180, 145, 98, 0.8) 0%, rgba(180, 145, 98, 0) 100%);
+}
