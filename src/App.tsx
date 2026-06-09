@@ -6,13 +6,15 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import History from "./components/History";
 import Manifesto from "./components/Manifesto";
-import Books from "./components/Books";
+import CuidarSemAdoecer from "./components/CuidarSemAdoecer";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Technology from "./components/Technology";
 import Results from "./components/Results";
-import About from "./components/About";
+import Credentials from "./components/Credentials";
+import Books from "./components/Books";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -22,13 +24,15 @@ export default function App() {
   useEffect(() => {
     const sections = [
       "inicio",
+      "minha-historia",
       "manifesto",
-      "livros",
+      "cuidar-sem-adoecer",
       "projetos",
       "educacao",
       "tecnologia",
       "resultados",
-      "sobre-mim",
+      "credenciais",
+      "livros",
       "contato animate"
     ];
 
@@ -66,16 +70,39 @@ export default function App() {
       {/* Dynamic Header */}
       <Header activeSection={activeSection} />
 
-      {/* Main Sections */}
+      {/* Main Sections in the exact sequence requested */}
       <main className="flex-grow">
+        {/* 1. Hero */}
         <Hero />
+
+        {/* 2. Minha História */}
+        <History />
+
+        {/* 3. Manifesto */}
         <Manifesto />
-        <Books />
+
+        {/* 4. Cuidar Sem Adoecer */}
+        <CuidarSemAdoecer />
+
+        {/* 5. Projetos de Transformação */}
         <Projects />
+
+        {/* 6. Educação e Simulação */}
         <Education />
+
+        {/* 7. Tecnologia e Inovação */}
         <Technology />
+
+        {/* 8. Resultados */}
         <Results />
-        <About />
+
+        {/* 9. Formação e Credenciais */}
+        <Credentials />
+
+        {/* 10. Livros e Publicações (Demais livros) */}
+        <Books />
+
+        {/* 11. Contato */}
         <Contact />
       </main>
 

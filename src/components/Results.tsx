@@ -9,46 +9,46 @@ import { Award, Briefcase, CheckCircle, GraduationCap, Users, ShieldCheck, Spark
 export default function Results() {
   const resultCards = [
     {
-      metric: "Nacional",
-      label: "Capacitação Operacional",
-      description: "Formação integral de profissionais da saúde distribuídos em projetos de fôlego nacional, unificando condutas preventivas e técnicas de alta fidelidade.",
+      metric: "+40%",
+      label: "Fator de Impacto Gerado (TRR)",
+      description: "Redução de paradas cardiorrespiratórias em enfermarias por meio do redesenho de processos e da estruturação do Time de Resposta Rápida.",
       icon: Users,
-      badge: "Liderança de Projeto"
+      badge: "Impacto Assistencial"
     },
     {
-      metric: "EaD / Digital",
-      label: "Desenvolvimento de Cursos",
-      description: "Modelagem instrucional completa para trilhas de aprendizagem em Ambientes Virtuais (AVAs), unindo UX fluida a metodologias pedagógicas baseadas em neurociência.",
-      icon: GraduationCap,
-      badge: "Inovação Educativa"
-    },
-    {
-      metric: "Sistêmica",
-      label: "Implantação de Serviços",
-      description: "Liderança de ponta a ponta na inauguração de leitos críticos e operacionais, englobando fluxo físico de enfermagem, capacitação clínica de times e montagem tecnológica.",
+      metric: "04",
+      label: "Serviços Complexos Implantados",
+      description: "Modelagem física, técnica e de prontuários em Pronto Atendimento, Sala Vermelha, Centro de Diagnóstico por Imagem e times preventivos.",
       icon: Briefcase,
-      badge: "Gestão Operacional"
+      badge: "Projetos Implantados"
     },
     {
-      metric: "Multiprofissional",
-      label: "Liderança de Equipes",
-      description: "Gestão e desenvolvimento de cultura integrada entre médicos, enfermeiros e equipes técnicas de forma colaborativa, focada na segurança psicológica.",
+      metric: "+5.000",
+      label: "Profissionais Liderados & Capacitados",
+      description: "Engajamento e treinamento sistêmico de equipes multipessoais (enfermagem, medicina e fisioterapia) sob metodologias de segurança psicológica.",
       icon: Award,
-      badge: "Cultura & Pessoas"
+      badge: "Equipes Lideradas"
     },
     {
-      metric: "Protocolar",
-      label: "Desenvolvimento Institucional",
-      description: "Elaboração e escrita científica de dezenas de manuais e protocolos assistenciais críticos adotados sistemicamente por instituições hospitalares premium.",
+      metric: "15+",
+      label: "Programas Educacionais Criados",
+      description: "Modelagem instrucional completa para cursos técnicos, trilhas transversais e capacitações EaD integradas em Ambientes Virtuais (AVAs).",
+      icon: GraduationCap,
+      badge: "Programas Desenvolvidos"
+    },
+    {
+      metric: "12+",
+      label: "Protocolos Assistenciais de Ponta",
+      description: "Desenho científico e diretrizes clínicas (MEWS, Manchester, Carrinhos de Emergência) estruturando a governança clínica institucional.",
       icon: ShieldCheck,
-      badge: "Padronização Assistencial"
+      badge: "Processos & Governança"
     },
     {
-      metric: "Acreditação",
-      label: "Selos Hospitalares",
-      description: "Participação ativa e fomento pedagógico de processos complexos de acreditação médica hospitalar nacional e internacional (ONA, JCI).",
+      metric: "100%",
+      label: "Acreditação e Selos Oficiais",
+      description: "Participação ativa na fiação técnica para conformidade com padrões premium nacionais e internacionais de qualidade hospitalar (ONA e JCI).",
       icon: CheckCircle,
-      badge: "Qualidade Máxima"
+      badge: "Qualidade & Processos"
     }
   ];
 
@@ -95,9 +95,9 @@ export default function Results() {
                   </div>
 
                   {/* Big Metric Display */}
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono text-slate-450 block uppercase tracking-widest leading-none">MÉTRICA</span>
-                    <h3 className="font-serif text-xl sm:text-2xl text-[#0b1a30] font-semibold leading-tight">
+                  <div className="space-y-0.5">
+                    <span className="text-[9px] font-mono text-slate-400 block uppercase tracking-widest leading-none">MÉTRICA INDICADORA</span>
+                    <h3 className="font-sans text-3xl sm:text-4xl font-extrabold text-[#0b1a30] tracking-tight leading-tight">
                       {res.metric}
                     </h3>
                   </div>

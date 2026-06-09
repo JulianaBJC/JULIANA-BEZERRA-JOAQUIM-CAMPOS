@@ -25,13 +25,15 @@ export default function Header({ activeSection }: HeaderProps) {
 
   const navItems = [
     { label: "Início", href: "#inicio" },
+    { label: "História", href: "#minha-historia" },
     { label: "Manifesto", href: "#manifesto" },
-    { label: "Livros", href: "#livros" },
+    { label: "Cuidar", href: "#cuidar-sem-adoecer" },
     { label: "Projetos", href: "#projetos" },
     { label: "Educação", href: "#educacao" },
     { label: "Tecnologia", href: "#tecnologia" },
     { label: "Resultados", href: "#resultados" },
-    { label: "Sobre", href: "#sobre-mim" },
+    { label: "Credenciais", href: "#credenciais" },
+    { label: "Livros", href: "#livros" },
   ];
 
   return (
@@ -64,17 +66,12 @@ export default function Header({ activeSection }: HeaderProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className={`relative px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors ${
-                  isActive ? "text-gold-700" : "text-slate-600 hover:text-[#0b1a30]"
+                className={`relative px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 border ${
+                  isActive 
+                    ? "text-gold-700 bg-gold-500/5 border-gold-500/20 shadow-xs" 
+                    : "text-slate-600 border-transparent hover:text-[#0b1a30] hover:bg-slate-100/50"
                 }`}
               >
-                {isActive && (
-                  <motion.span
-                    layoutId="activeNavBG"
-                    className="absolute inset-0 bg-gold-500/5 rounded-full border border-gold-500/20"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
                 {item.label}
               </a>
             );
@@ -95,7 +92,7 @@ export default function Header({ activeSection }: HeaderProps) {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors"
+          className="lg:hidden p-2 text-slate-700 hover:text-gold-750 transition-colors cursor-pointer"
           aria-label="Toggle Menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

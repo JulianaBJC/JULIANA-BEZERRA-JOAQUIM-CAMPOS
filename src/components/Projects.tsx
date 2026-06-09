@@ -11,54 +11,75 @@ export default function Projects() {
     {
       id: "pronto-atendimento",
       title: "Implantação de Pronto Atendimento",
-      description: "Modelagem e implementação completa de serviços de urgência e emergência, desenhando desde o fluxo físico de triagem até a integração de equipes multiprofissionais sob forte demanda assistencial.",
+      description: "Modelagem e implementação completa de serviços de urgência e emergência. Desenhando desde o fluxo físico de triagem até a integração de equipes multiprofissionais sob forte demanda assistencial, integrando processos digitais inovadores.",
       icon: Activity,
       color: "border-emerald-500/30 text-emerald-700 bg-emerald-50",
+      pillars: ["Estruturação de Processos", "Desenvolvimento de Pessoas", "Modelagem de Serviços"],
       details: [
-        "Desenho do fluxo de triagem inteligente fundamentado no Protocolo de Manchester.",
-        "Redução drástica no tempo de espera assistencial e otimização de recursos alocados.",
-        "Treinamento operacional integral focado em acolhimento e escuta qualificada."
+        "Mapeamento e estruturação de processos clínicos focados no Protocolo de Manchester para triagem inteligente.",
+        "Desenvolvimento de pessoas por meio de capacitação humanizada para acolhimento e escuta ativa de alta resolutividade.",
+        "Desenho do fluxo assistencial integrado que reduziu decisivamente o tempo de espera à beira do leito."
       ],
       impact: "Criação de um ambiente de rápido fluxo que responde com maestria em cenários caóticos de urgência."
     },
     {
       id: "sala-vermelha",
-      title: "Implantação de Sala Vermelha (Emergências de Alta Complexidade)",
-      description: "Estruturação física, técnica e de equipamentos críticos para o atendimento de pacientes críticos em risco eminente de morte. Alinhamento de conduta imediata.",
+      title: "Implantação de Sala Vermelha (Alta Complexidade)",
+      description: "Estruturação e ativação de unidades críticas de urgência para atendimento imediato de pacientes em risco iminente de morte, pautado por conformidade técnica rigorosa e alinhamento assistencial.",
       icon: ShieldAlert,
       color: "border-red-500/30 text-red-700 bg-red-50",
+      pillars: ["Protocolos Assistenciais", "Governança Clínica", "Segurança do Paciente"],
       details: [
-        "Definição rigorosa de carrinhos de emergência, ventiladores mecânicos e insumos de trauma.",
-        "Desenho de checklists de checagem diária baseados em metodologias de aviação civil.",
-        "Elaboração de protocolos assistenciais imediatos (Parada Cardiorrespiratória, Infarto e AVC)."
+        "Elaboração de protocolos assistenciais imediatos com foco científico (Parada Cardiorrespiratória, Infarto e AVC).",
+        "Promoção de governança clínica através de checklists diários rigorosos de insumos, baseados na aviação civil.",
+        "Treinamento de equipes em condutas sob estresse, reduzindo drasticamente falhas de processo."
       ],
       impact: "Ambiente blindado para resposta rápida ao limiar entre a vida e a morte, minimizando falhas de processo."
     },
     {
       id: "time-resposta-rapida",
       title: "Time de Resposta Rápida (TRR)",
-      description: "Criação de equipes de intervenção precoce em ambiente de internação, voltadas para avaliar criticamente os pacientes antes da deterioração neurológica ou hemodinâmica aguda.",
+      description: "Criação e coordenação técnica de equipes de intervenção precoce em enfermarias, voltadas para avaliar criticamente os pacientes antes da deterioração neurológica ou de parada cardiorrespiratória.",
       icon: Heart,
       color: "border-purple-500/30 text-purple-750 bg-purple-50",
+      pillars: ["Transformação Organizacional", "Desenvolvimento de Pessoas", "Governança Clínica"],
       details: [
-        "Capacitação da enfermagem assistencial convencional para acionamento precoce.",
-        "Implementação de score padronizado de deterioração clínica rápida (como MEWS).",
-        "Atendimento imediato focado em medicina de urgência invasiva preventiva."
+        "Transformação organizacional com criação de fluxos rápidos de acionamento de enfermarias a leitos de UTI.",
+        "Implementação de escores de deterioração clínica padronizados (como MEWS) integrados aos prontuários.",
+        "Capacitação contínua e desenvolvimento de pessoas para atuação preventiva em medicina de urgência."
       ],
       impact: "Redução de até 40% nas paradas cardiorrespiratórias ocorridas fora do ambiente intensivo (UTI)."
     },
     {
       id: "centro-diagnostico-imagem",
       title: "Implantação de Centro de Diagnóstico por Imagem (CDI)",
-      description: "Liderança de processos complexos no desenho e ativação assistencial de unidades de imagem diagnóstica robustas (Tomografia, Ressonância Magnética e Ultrassonografia).",
+      description: "Liderança de processos complexos no desenho de ativação de unidades de imagem diagnóstica robustas (Tomografia, Ressonância Magnética e Ultrassonografia) sintonizadas com a emergência.",
       icon: Eye,
       color: "border-blue-500/30 text-blue-700 bg-blue-50",
+      pillars: ["Implantação de Sistemas", "Estruturação de Processos", "Integração Tecnológica"],
       details: [
-        "Garantia de segurança máxima de blindagem radiológica e triagem preventiva contra acidentes magnéticos.",
-        "Padronização de vias de contraste seguro de acordo com as mais recentes diretrizes renais.",
-        "Integração sistêmica entre processos de agendamento, realização técnica e laudo célere."
+        "Implantação de sistemas de gestão operacional integrando agendamentos, realização técnica e laudo célere.",
+        "Mapeamento minucioso de fluxos de segurança física contra acidentes com blindagem radiológica e triagem magnética.",
+        "Design de fluxos clínicos de contraste seguro, alinhando a eficiência assistencial de exames urgentes."
       ],
       impact: "Unidade de alta performance gerando diagnóstico assertivo que retroalimenta a urgência e UTI de forma segura."
+    },
+    {
+      id: "proadi-sus",
+      title: "Projetos PROADI-SUS & Ministério da Saúde",
+      description: "Cooperação técnica estratégica para o fortalecimento do Sistema Único de Saúde (SUS), atuando ativamente no desenvolvimento operacional de projetos educacionais de abrangência nacional.",
+      icon: Users,
+      color: "border-amber-500/30 text-amber-800 bg-amber-50/50",
+      pillars: ["Planejamento Educacional", "PROADI-SUS", "Gestão de Indicadores", "Criação de Trilhas"],
+      details: [
+        "Desenvolvimento e planejamento estratégico de projetos educacionais estruturados sob planos pedagógicos robustos.",
+        "Gestão qualificada de cursos EaD voltados especificamente para a área da Saúde em escala nacional.",
+        "Contribuição técnica ativa na modelagem e elaboração refinada de escopos de projetos para o PROADI-SUS.",
+        "Gestão acadêmica e monitoramento contínuo de indicadores em plataformas virtuais de aprendizagem hospitalar.",
+        "Apoio qualificado na gestão financeira, alocação de recursos materiais e elaboração de matrizes de curso com projeções de demanda.",
+        "Criação de trilhas inovadoras de aprendizagem, design visual instrucional e gravação profissional de locução de conteúdo audiovisual."
+      ],
+      impact: "Fortalecimento do letramento clínico público do país por meio de trilhas escaláveis e curadoria técnico-científica de alta resolutividade."
     }
   ];
 
@@ -136,6 +157,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {projectsList.map((project, index) => {
             const Icon = project.icon;
+            const isFullWidth = project.id === "proadi-sus";
             return (
               <motion.div
                 key={project.id}
@@ -143,7 +165,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between glow-card"
+                className={`bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl flex flex-col justify-between glow-card ${isFullWidth ? 'md:col-span-2' : ''}`}
               >
                 <div className="space-y-6">
                   {/* Icon & Title */}
@@ -160,6 +182,17 @@ export default function Projects() {
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                     {project.description}
                   </p>
+
+                  {/* Pillars / Badges */}
+                  {project.pillars && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {project.pillars.map((pillar) => (
+                        <span key={pillar} className="text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-gold-500/10 text-gold-750 border border-gold-500/20">
+                          {pillar}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Bullet points */}
                   <div className="space-y-2.5 border-t border-slate-100 pt-5">

@@ -5,7 +5,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "motion/react";
-import { Send, CheckCircle, Mail, Linkedin, FileText } from "lucide-react";
+import { Send, CheckCircle, Mail, Linkedin, FileText, Loader2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,12 +14,45 @@ export default function Contact() {
     institution: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    
+    setIsSubmitting(true);
+    setSubmitError(false);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/Juliana.jbj2013@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Nome: formData.name,
+          Email: formData.email,
+          "Instituição / Empresa": formData.institution || "Não Informada",
+          Mensagem: formData.message,
+          _subject: `Novo Contato Portfólio: ${formData.name}`,
+          _honey: "", // Honeypot field for anti-spam
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error("Falha no servidor formsubmit");
+      }
+    } catch (error) {
+      console.error("Erro no envio do formulário:", error);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -60,7 +93,7 @@ export default function Contact() {
                 </a>
 
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/julianabjcampos" 
                   target="_blank" 
                   rel="noreferrer" 
                   className="flex items-center gap-3.5 text-slate-700 hover:text-gold-700 transition-colors group"
@@ -70,19 +103,24 @@ export default function Contact() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[9px] font-mono text-slate-500 uppercase font-semibold">LinkedIn Executivo</span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#0b1a30]">Juliana Bezerra Joaquim Campos</span>
+                    <span className="text-xs sm:text-sm font-semibold text-[#0b1a30] group-hover:text-gold-700">Juliana Bezerra Joaquim Campos →</span>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-3.5 text-slate-700 group">
-                  <div className="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-450 shrink-0">
+                <a 
+                  href="https://lattes.cnpq.br/7620440011673911" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center gap-3.5 text-slate-700 hover:text-gold-700 transition-colors group"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-450 group-hover:text-gold-700 group-hover:border-gold-550/30 transition-all shrink-0">
                     <FileText className="w-4.5 h-4.5" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[9px] font-mono text-slate-500 uppercase font-semibold">Curriculum Lattes / CNPq</span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#0b1a30]">Acessível via consulta UNIFESP</span>
+                    <span className="text-xs sm:text-sm font-semibold text-[#0b1a30] group-hover:text-gold-700">Acessar Currículo Lattes →</span>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -172,12 +210,29 @@ export default function Contact() {
                     />
                   </div>
 
+                  {submitError && (
+                    <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                      <span>Houve um erro de conexão ao enviar a mensagem. Por favor, tente novamente ou mande um e-mail direto para Juliana.</span>
+                    </div>
+                  )}
+
                   <button 
                     type="submit" 
-                    className="w-full py-4 rounded-xl text-xs sm:text-sm font-bold bg-[#0b1a30] text-gold-450 hover:bg-[#091526] hover:text-gold-400 flex items-center justify-center gap-2 shadow-lg cursor-pointer transition-all hover:scale-101 border-none"
+                    disabled={isSubmitting}
+                    className="w-full py-4 rounded-xl text-xs sm:text-sm font-bold bg-[#0b1a30] text-gold-450 hover:bg-[#091526] hover:text-gold-400 flex items-center justify-center gap-2 shadow-lg cursor-pointer transition-all hover:scale-101 border-none disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4" />
-                    Enviar Proposta ou Consulta
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Enviando Mensagem...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Enviar Proposta ou Consulta</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
