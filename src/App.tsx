@@ -4,6 +4,8 @@
  */
 
 import { useState, useEffect } from "react";
+import { PresentationProvider, usePresentation } from "./context/PresentationContext";
+import PresentationControls from "./components/PresentationControls";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import History from "./components/History";
@@ -19,10 +21,19 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  return (
+    <PresentationProvider>
+      <PortfolioContent />
+    </PresentationProvider>
+  );
+}
+
+function PortfolioContent() {
   const [activeSection, setActiveSection] = useState("inicio");
+  const { isActive } = usePresentation();
 
   useEffect(() => {
-    const sections = [
+    const observerSections = [
       "inicio",
       "minha-historia",
       "manifesto",
@@ -52,13 +63,13 @@ export default function App() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    sections.forEach((id) => {
+    observerSections.forEach((id) => {
       const element = document.getElementById(id.split(" ")[0]);
       if (element) observer.observe(element);
     });
 
     return () => {
-      sections.forEach((id) => {
+      observerSections.forEach((id) => {
         const element = document.getElementById(id.split(" ")[0]);
         if (element) observer.unobserve(element);
       });
@@ -70,8 +81,8 @@ export default function App() {
       {/* Dynamic Header */}
       <Header activeSection={activeSection} />
 
-      {/* Main Sections in the exact sequence requested */}
-      <main className="flex-grow">
+      {/* Main Sections render naturally and cleanly */}
+      <main className="flex-grow scroll-smooth">
         {/* 1. Hero */}
         <Hero />
 
@@ -105,6 +116,9 @@ export default function App() {
         {/* 11. Contato */}
         <Contact />
       </main>
+
+      {/* Floating Presentation Controls Deck */}
+      <PresentationControls />
 
       {/* Footer */}
       <Footer />

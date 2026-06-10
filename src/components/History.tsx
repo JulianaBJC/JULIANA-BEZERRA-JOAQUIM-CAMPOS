@@ -4,13 +4,27 @@
  */
 
 import { motion } from "motion/react";
-import { Compass, Sparkles, Heart } from "lucide-react";
+import {
+  Compass,
+  Heart,
+  Shield,
+  Activity,
+  GraduationCap,
+  Building,
+  Award,
+  Layers,
+  Users,
+  Cpu,
+  BookMarked,
+  Sparkles
+} from "lucide-react";
 
 export default function History() {
   return (
     <section id="minha-historia" className="py-24 relative overflow-hidden bg-white">
       {/* Decorative Blur Backgrounds */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         
@@ -29,7 +43,7 @@ export default function History() {
           {/* Main Biography Text */}
           <div className="lg:col-span-7 space-y-6 text-slate-700 font-normal text-sm sm:text-base leading-relaxed">
             <p>
-              Cuidar de vidas humanas em ambientes críticos sempre foi o norte da minha caminhada profissional. No entanto, ao longo de anos de atuação clínica hospitalar severa e coordenação de equipes em saúde, me deparei com uma contradição inquietante: os sistemas tradicionais preparam o profissional para dar a vida pelo outro, mas ignoram totalmente os mecanismos de preservação de sua integridade física e mental.
+              Cuidar de vidas humanas em ambientes críticos sempre foi o norte da minha caminhada profissional. No entanto, ao longo de anos de atuação clínica hospitalar severa e coordenação de equipes em saúde, me deparei com uma contradição inquietante: os sistemas tradicionais preparam o profissional para dar a vida pelo outro, mas ignoram totalmente os mechanisms de preservação de sua integridade física e mental.
             </p>
             <p>
               Minha formação profissional cruzou duas avenidas cruciais: a <strong className="text-[#0b1a30]">Enfermagem em Cardiologia</strong> — onde a precisão de segundos decide a vida, e a <strong className="text-[#0b1a30]">Pedagogia</strong> — que me ensinou as leis de como o cérebro humano absorve novos comportamentos e conhecimentos. Posteriormente, o <strong className="text-[#0b1a30]">Mestrado na UNIFESP</strong> solidificou minha competência na pesquisa científica e na validação empírica.
