@@ -9,6 +9,7 @@ import PresentationControls from "./components/PresentationControls";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import History from "./components/History";
+import PorOndeAndei from "./components/PorOndeAndei";
 import Manifesto from "./components/Manifesto";
 import CuidarSemAdoecer from "./components/CuidarSemAdoecer";
 import Projects from "./components/Projects";
@@ -36,6 +37,7 @@ function PortfolioContent() {
     const observerSections = [
       "inicio",
       "minha-historia",
+      "por-onde-andei",
       "manifesto",
       "cuidar-sem-adoecer",
       "projetos",
@@ -88,6 +90,9 @@ function PortfolioContent() {
 
         {/* 2. Minha História */}
         <History />
+
+        {/* 2.5. Por Onde Andei */}
+        <PorOndeAndei />
 
         {/* 3. Manifesto */}
         <Manifesto />

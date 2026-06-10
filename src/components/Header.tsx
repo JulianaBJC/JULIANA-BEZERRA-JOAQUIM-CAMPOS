@@ -26,6 +26,7 @@ export default function Header({ activeSection }: HeaderProps) {
   const navItems = [
     { label: "Início", href: "#inicio" },
     { label: "História", href: "#minha-historia" },
+    { label: "Trajetória", href: "#por-onde-andei" },
     { label: "Manifesto", href: "#manifesto" },
     { label: "Cuidar", href: "#cuidar-sem-adoecer" },
     { label: "Projetos", href: "#projetos" },
